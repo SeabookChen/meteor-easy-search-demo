@@ -1,0 +1,38 @@
+<template name="home">
+  <div class="row">
+    {{> searchBox}}
+  </div>
+  <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Sex</th>
+          <th>Age</th>
+        </tr>
+      </thead>
+      <tbody>
+      {{#each people}}
+        {{> person}}
+      {{/each}}
+      </tbody>
+  </table>
+  <hr>
+</template>
+
+<template name="person">
+  <tr>
+    <td><a href="{{pathFor 'showPerson'}}">{{name}}</a></td>
+    <td>{{sex}}</td>
+    <td>{{age}}</td>
+  </tr>
+</template>
+
+<template name="searchBox">
+  {{> esAutosuggest index="people" placeholder="Search People Name..." }}
+
+  <ul>
+      {{#esEach index="people"}}
+          <li><a href="{{pathFor 'showPerson'}}">{{name}}</a></li>
+      {{/esEach}}
+  </ul>
+</template>

@@ -1,0 +1,25 @@
+<head>
+  <title>Meteor Easy Search Demo</title>
+</head>
+
+<template name="layout">
+
+    <div class="container">
+      <h1>Welcome to Meteor Easy Search Demo!</h1>
+
+      <a href="{{pathFor 'home'}}">home</a>
+      <hr>
+      {{> yield}}
+    </div>
+
+</template>
+
+
+
+<template name="not_found">
+    <p>Sorry, the page you requested doesn't exist! Choose a page from the menu.</p>
+</template>
+
+<template name="loading">
+    <h1>Loading ...</h1>
+</template>
